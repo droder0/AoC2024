@@ -1,10 +1,12 @@
 {-# LANGUAGE LambdaCase #-}
 module Main where
 import Day.Day1 (part1, part2)
+import Day.Day2 (part1, part2)
 
 days :: [(String -> String, String -> String)]
 days = [
-    (Day.Day1.part1, Day.Day1.part2)
+    (Day.Day1.part1, Day.Day1.part2),
+    (Day.Day2.part1, Day.Day2.part2)
     ]
 
 input :: String -> IO String
