@@ -14,7 +14,7 @@ countXmas (_:xs) = countXmas xs
 countXmas [] = 0
 
 diagonals :: [[Char]] -> [[Char]]
-diagonals xss = transpose $ zipWith (\xs i -> replicate i ' ' ++ xs) xss [0 .. length xss]
+diagonals xss = transpose $ zipWith (++) (iterate (' ':) []) xss 
 
 part1 :: String -> String
 part1 (lines -> inp) = show $ sum $ map countXmas (inp ++ transpose inp ++ diagonals inp ++ diagonals (reverse inp))
