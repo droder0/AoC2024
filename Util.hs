@@ -2,7 +2,7 @@ module Util where
 import Data.List (tails)
 
 windowed :: Int -> [a] -> [[a]]
-windowed n xs = takeWhile ((==n) . length) $ map (take n) $ tails xs
+windowed n = takeWhile ((==n) . length) . map (take n) . tails
 
 split :: (a->Bool) -> [a] -> [[a]]
 split p xs = case break p xs of
