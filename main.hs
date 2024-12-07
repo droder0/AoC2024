@@ -5,6 +5,7 @@ import Day.Day2 (part1, part2)
 import Day.Day3 (part1, part2)
 import Day.Day4 (part1, part2)
 import Day.Day5 (part1, part2)
+import Day.Day6 (part1, part2)
 
 days :: [(String -> String, String -> String)]
 days = [
@@ -12,7 +13,8 @@ days = [
     (Day.Day2.part1, Day.Day2.part2),
     (Day.Day3.part1, Day.Day3.part2),
     (Day.Day4.part1, Day.Day4.part2),
-    (Day.Day5.part1, Day.Day5.part2)
+    (Day.Day5.part1, Day.Day5.part2),
+    (Day.Day6.part1, Day.Day6.part2)
     ]
 
 input :: String -> IO String
