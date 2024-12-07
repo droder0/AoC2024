@@ -10,9 +10,7 @@ import Data.Char (isDigit)
 import Text.ParserCombinators.ReadPrec (readPrec_to_P)
 import Text.Read (Read(readPrec))
 import Data.Functor (($>), void)
-
-readP :: Read a => ReadP a
-readP = readPrec_to_P readPrec 0
+import Util (readP)
 
 multiplication :: ReadP Int
 multiplication = do

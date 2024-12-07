@@ -1,5 +1,11 @@
 module Util where
 import Data.List (tails)
+import Text.ParserCombinators.ReadP (ReadP)
+import Text.Read (readPrec_to_P, Read (readPrec))
+
+
+readP :: Read a => ReadP a
+readP = readPrec_to_P readPrec 0
 
 windowed :: Int -> [a] -> [[a]]
 windowed n = takeWhile ((==n) . length) . map (take n) . tails
