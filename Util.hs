@@ -25,3 +25,13 @@ stripSuffix sfx (x:xs)
     | sfx == xs = Just [x]
     | otherwise = fmap (x:) (stripSuffix sfx xs)
 stripSuffix sfx [] = Nothing
+
+indexedGridBounds :: [[a]] -> ([(a,(Int,Int))],Int,Int)
+indexedGridBounds xs =
+    let xBound = length $ head xs
+        yBound = length xs
+        coords = flip (,) <$> [0 .. yBound-1] <*> [0 .. xBound-1]
+    in (zip (concat xs) coords,xBound,yBound)
+
+indexedGrid :: [[a]] -> [(a, (Int, Int))]
+indexedGrid = (\(x,_,_)->x) . indexedGridBounds
